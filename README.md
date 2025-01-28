@@ -23,4 +23,5 @@ Il vous suffira ensuite de lancer ./main.ps1 et de rentrer les informations de c
 
 # **TODO**
 TODO : Mettre en place les chemins relatifs dans le fichier python
+
 TODO : trouver un moyen de traiter plus rapidement les tenants avec un grand nombre d'utilisateurs
