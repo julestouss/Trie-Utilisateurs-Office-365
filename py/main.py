@@ -1,6 +1,8 @@
 import pandas as pd
 import os
 
+# important ! pour le moment tout les path doivent être changé a la main pour chaque utilisateur --> les chemins relatifs ne marche pas
+# il est prévu de pallier à ce problème au plus vite
 
 def load_license_dictionary(file_path):
     """
@@ -75,7 +77,7 @@ def process_csv(file_path, license_dict):
     grouped = {domaine: group for domaine, group in df_sorted.groupby('Domaine')}
 
     # Exporter chaque groupe dans une feuille séparée dans un fichier Excel
-    excel_file = r"C:\Users\JulesTOUSSAINT-INFOW\OneDrive - INFOWA\Bureau\CODE\trie_user_office\excel\utilisateurs_o365.xlsx"
+    excel_file = r"\trie_user_office\excel\utilisateurs_o365.xlsx"
     with pd.ExcelWriter(excel_file, engine='openpyxl') as writer:
         for domaine, group in grouped.items():
             # Utiliser le domaine comme nom de feuille, limité à 31 caractères
@@ -85,13 +87,13 @@ def process_csv(file_path, license_dict):
 
 
 # Chemin vers le fichier CSV des noms amis de licences généré par le script PowerShell cf https://github.com/junecastillote/Microsoft-365-License-Friendly-Names/blob/master/Get-m365ProductIDTable.ps1
-license_dict_path = r"C:\Users\JulesTOUSSAINT-INFOW\OneDrive - INFOWA\Bureau\CODE\trie_user_office\csv\m365ProductIDTable.csv"
+license_dict_path = r"\trie_user_office\csv\m365ProductIDTable.csv"
 
 # Charger les noms amis de licences depuis le CSV
 license_dict = load_license_dictionary(license_dict_path)
 
 # Chemin vers le fichier CSV des utilisateurs
-csv_file_path = r"C:\Users\JulesTOUSSAINT-INFOW\OneDrive - INFOWA\Bureau\CODE\trie_user_office\csv\Office365_Users.csv"
+csv_file_path = r"\trie_user_office\csv\Office365_Users.csv"
 
 # Traiter le fichier CSV des utilisateurs avec le dictionnaire de licences
 process_csv(csv_file_path, license_dict)

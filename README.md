@@ -1,4 +1,7 @@
-## **Trie des utilisateurs office 365**
+### **Trie des utilisateurs office 365**
+
+Ce projet utilise le code provenant de [Microsoft-365-License-Friendly-Names, @junecastillote](https://github.com/junecastillote/Microsoft-365-License-Friendly-Names/tree/master) disponible sous la licence MIT.
+
 
 Ces scripts permettent de trier les utilisateurs office par nom de domaine de leur adress mail principale,
 Il permet aussi d'obtenir les licences des utilisateurs et convertie leur ID en "friendly name" pour une meilleur compréhension du tableau.
@@ -17,3 +20,7 @@ Il faudra aussi changer les chemin d'accès dans les lignes 78, 88 et 94 du fich
 ! les chemins relatif ne marchent pas il faut mettre les chemins complets 
 
 Il vous suffira ensuite de lancer ./main.ps1 et de rentrer les informations de connection au compte admin du tenant voulue
+
+# **TODO**
+TODO : Mettre en place les chemins relatifs dans le fichier python
+TODO : trouver un moyen de traiter plus rapidement les tenants avec un grand nombre d'utilisateurs
